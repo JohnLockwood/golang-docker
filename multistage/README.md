@@ -12,7 +12,7 @@ To optimize it, we can use a [multi-stage build](https://docs.docker.com/develop
 
 ## Building
 
-We build it as we built our earlier image, but since we expect it to be smaller, we'l give it a new name, mini-gorilla.  
+We build it as we built our earlier image, but since we expect it to be smaller, we'll give it a new name, mini-gorilla.  
 
 ```
 docker build -t mini-gorilla:latest .
@@ -32,7 +32,7 @@ mini-gorilla        latest              5ae087964c8d        53 seconds ago      
 Run the image in detached mode, naming the container "gorilla", and mapping the container port (9000) to a host port (8080):
 
 ```
-docker run --name gorilla -p8080:9000 -d golang-gorilla
+docker run --name gorilla2 -p8080:9000 -d mini-gorilla
 ```
 
 With this running you can then reach the server from the host:

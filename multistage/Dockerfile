@@ -1,7 +1,7 @@
 FROM golang as builder
 WORKDIR /app
-ADD * /app/
-RUN go build -o server . 
+COPY * /app/
+RUN env GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o server .
 
 FROM alpine:latest
 WORKDIR /root/
